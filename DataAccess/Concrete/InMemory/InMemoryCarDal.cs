@@ -37,9 +37,9 @@ namespace DataAccess.Concrete.InMemory
             return _cars;
         }
 
-        public List<Car> GetById(int myId)
+        public Car GetById(int myId)
         {
-            return _cars.Where(p => p.CarId == myId).ToList();
+            return _cars.SingleOrDefault(p => p.CarId == myId);
         }
 
         public void Update(Car car)
